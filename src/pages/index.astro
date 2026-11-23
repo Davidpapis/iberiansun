@@ -1,0 +1,521 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const reasons = [
+  {
+    number: '01',
+    title: 'Quality & Experience',
+    description:
+      'Backed by Serinamar’s extensive expertise of over 25 years in Marbella, we guarantee exceptional service and personalized attention throughout your stay, ensuring a seamless and enjoyable experience.',
+  },
+  {
+    number: '02',
+    title: 'Perfect Location',
+    description:
+      'Ideally situated in Nueva Andalucía, our properties are close to beautiful beaches, prestigious golf courses, and Marbella’s vibrant lifestyle — with easy access to shopping, dining, and leisure in Puerto Banús.',
+  },
+  {
+    number: '03',
+    title: 'Diverse Accommodation Options',
+    description:
+      'Choose from cozy holiday apartments to spacious townhouses and luxurious villas, all carefully maintained and fully equipped to provide comfort and peace of mind during your vacation.',
+  },
+  {
+    number: '04',
+    title: 'Personalized Service',
+    description:
+      'We pay attention to every detail from check-in to check-out. Our local team in Marbella ensures your stay is smooth, welcoming, and tailored to your family or group’s needs.',
+  },
+];
+
+const destinations = [
+  {
+    name: 'Los Naranjos',
+    tag: 'Gardens & Pools',
+    image: '/images/destinations/los-naranjos.jpg',
+    imageAlt: 'Communal swimming pool and Mediterranean gardens in Los Naranjos de Marbella',
+    description:
+      'Comfortable apartments and townhouses surrounded by lush Andalusian gardens, multiple swimming pools, on-site cafés, and a relaxed family-friendly atmosphere.',
+    highlights: ['Lush tropical gardens & pools', 'Walk to cafés & supermarket', 'Minutes from Puerto Banús'],
+  },
+  {
+    name: 'Aloha Gardens',
+    tag: 'Golf Valley Elegance',
+    image: '/images/destinations/aloha-gardens.jpg',
+    imageAlt: 'Aloha Gardens residential complex in Nueva Andalucía, Marbella',
+    description:
+      'Elegant properties with exclusive amenities right in the heart of the Golf Valley, surrounded by renowned courses, international restaurants, and refined leisure.',
+    highlights: ['Heart of Marbella Golf Valley', 'Heated & outdoor pools', 'Vibrant dining right outside'],
+  },
+  {
+    name: 'Dama de Noche',
+    tag: 'Steps from Puerto Banús',
+    image: '/images/destinations/dama-de-noche.jpg',
+    imageAlt: 'Stylish holiday residence near Puerto Banús in Dama de Noche, Marbella',
+    description:
+      'Secure, convenient, and stylish accommodations with 24-hour gated security, paddle courts, and expansive pools — just a short walk from Puerto Banús marina and beaches.',
+    highlights: ['24-hour gated security', 'Walk to Puerto Banús & beach', 'Pools, gardens & paddle courts'],
+  },
+];
+
+const testimonials = [
+  {
+    quote: 'A perfect choice for our family holiday. Great service and fantastic location!',
+    author: 'John M.',
+    stay: 'Family Holiday · Nueva Andalucía',
+  },
+  {
+    quote:
+      'Everything from arrival to check-out was effortless. The apartment was spotless, beautifully prepared, and just minutes from Puerto Banús and the golf courses.',
+    author: 'Mikayla Macgregor',
+    stay: 'Verified Guest · Marbella',
+  },
+];
+
+const groupCompanies = [
+  {
+    name: 'Serinamar Group',
+    badge: 'Parent Group · Since 2000',
+    logo: '/images/logos/group-logo.png',
+    description:
+      'Over 25 years in Marbella uniting hospitality, real estate, and property management under one trusted local family group.',
+    href: 'https://gruposerinamar.com/en/',
+    cta: 'Visit Serinamar Group',
+  },
+  {
+    name: 'Serinamar',
+    badge: 'Hospitality & Real Estate',
+    logo: '/images/logos/serinamar-logo.png',
+    description:
+      'Direct holiday rentals (integrating Los Naranjos de Marbella), residential property sales, long-term lettings, and on-site reception.',
+    href: 'https://www.serinamar.com/',
+    cta: 'Explore Serinamar',
+  },
+  {
+    name: 'Just Banús',
+    badge: 'Property Management & Care',
+    logo: '/images/logos/just-banus-logo.png',
+    description:
+      'Your trusted partner in vacation rental management, cleaning, private laundry, preventive maintenance, and turnkey refurbishments.',
+    href: 'https://justbanus.com/',
+    cta: 'Explore Just Banús',
+  },
+];
+---
+
+<BaseLayout
+  title="Iberiansun | Your Ideal Holiday Stay in Nueva Andalucía, Marbella"
+  description="Iberiansun offers an exclusive selection of holiday properties in Nueva Andalucía, Marbella — Los Naranjos, Aloha Gardens & Dama de Noche — backed by Serinamar Group."
+  canonicalURL="https://iberiansun.es/"
+>
+  <!-- 1. CINEMATIC HERO (MATCHING SERINAMAR GROUP & JUST BANÚS DNA) -->
+  <section class="relative min-h-[calc(100vh-114px)] min-h-[calc(100dvh-114px)] flex flex-col justify-center px-4 sm:px-8 py-12 lg:py-16 bg-gradient-to-b from-[#132238] via-[#1B2F4C] to-[#132238] text-white overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-28 mix-blend-luminosity scale-105">
+      <img
+        src="/images/hero/puerto-banus-panorama.webp"
+        alt="Panoramic view of Puerto Banús and Nueva Andalucía in Marbella"
+        class="w-full h-full object-cover"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-[#132238]/75 via-[#132238]/55 to-[#132238]/90"></div>
+
+    <div class="max-w-5xl mx-auto w-full relative z-10 text-center py-6">
+      <p class="animate-hero-eyebrow inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/8 border border-[#C5A880]/35 text-[#E8D5B7] text-[11px] font-semibold uppercase tracking-[0.2em] mb-6">
+        <span>Quality &amp; Experience</span>
+        <span class="text-[#C5A880]">·</span>
+        <span>A Serinamar Group Company</span>
+      </p>
+
+      <h1 class="animate-hero-title text-3xl sm:text-5xl lg:text-[58px] font-serif font-semibold text-white tracking-tight leading-[1.1] mb-4">
+        Welcome to Iberiansun
+        <span class="block text-xl sm:text-2xl lg:text-[30px] font-serif font-normal text-[#C5A880] mt-3 leading-snug">
+          Your Ideal Holiday Stay in Nueva Andalucía, Marbella
+        </span>
+      </h1>
+
+      <p class="animate-hero-copy text-sm sm:text-base md:text-[17px] text-[#EAE3D9] font-light leading-relaxed max-w-3xl mx-auto mb-8">
+        Your gateway to unforgettable holidays in the heart of Marbella. <strong>Iberiansun</strong> offers an exclusive selection of properties managed by <strong>Serinamar</strong> — a trusted name in Costa del Sol property management with over 25 years of experience.
+      </p>
+
+      <!-- Animated Group Metrics -->
+      <div class="animate-hero-stats inline-flex flex-wrap items-center justify-center gap-4 sm:gap-7 py-2.5 px-6 rounded-full bg-white/5 border border-white/12 backdrop-blur-xs mb-9">
+        <div class="flex items-center gap-1.5">
+          <span class="stat-counter text-sm sm:text-base font-serif font-bold text-[#C5A880]" data-target="25" data-prefix="+">+25</span>
+          <span class="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#EAE3D9]/80 font-medium">Years Experience</span>
+        </div>
+        <span class="text-white/25 hidden sm:inline">·</span>
+        <div class="flex items-center gap-1.5">
+          <span class="stat-counter text-sm sm:text-base font-serif font-bold text-[#C5A880]" data-target="3">3</span>
+          <span class="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#EAE3D9]/80 font-medium">Signature Complexes</span>
+        </div>
+        <span class="text-white/25 hidden sm:inline">·</span>
+        <div class="flex items-center gap-1.5">
+          <span class="stat-counter text-sm sm:text-base font-serif font-bold text-[#C5A880]" data-target="4.8" data-suffix=" ★">4.8 ★</span>
+          <span class="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#EAE3D9]/80 font-medium">Guest Rating</span>
+        </div>
+        <span class="text-white/25 hidden sm:inline">·</span>
+        <div class="flex items-center gap-1.5">
+          <span class="text-sm sm:text-base font-serif font-bold text-[#C5A880]">100%</span>
+          <span class="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#EAE3D9]/80 font-medium">Local Marbella Team</span>
+        </div>
+      </div>
+
+      <!-- Primary Actions -->
+      <div class="animate-hero-actions flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="https://serinamar.guestybookings.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-shine inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg bg-[#C5A880] hover:bg-[#B8986C] text-[#132238] font-semibold text-xs sm:text-sm uppercase tracking-wider shadow-lg transition-all"
+        >
+          <span>Book Your Stay</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a
+          href="#destinations"
+          class="btn-shine inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg bg-white text-[#132238] hover:bg-[#F4EFE6] font-semibold text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all"
+        >
+          <span>Explore Destinations</span>
+          <span class="text-[#8C6A3E]" aria-hidden="true">↓</span>
+        </a>
+        <a
+          href="/contact/"
+          class="btn-shine inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-lg bg-white/8 hover:bg-white/15 text-white font-medium text-xs sm:text-sm uppercase tracking-wider border border-[#C5A880]/45 transition-all"
+        >
+          <span>Contact Our Team</span>
+          <span class="text-[#C5A880]" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. WELCOME STATEMENT & BRAND PROMISE -->
+  <section class="site-section bg-[#FDFBF7]">
+    <div class="site-shell">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-7 reveal-on-scroll">
+          <img
+            src="/images/logos/iberiansun-logo-nobg.png"
+            alt="Iberiansun — A Serinamar Group Company"
+            class="h-20 w-auto object-contain mb-6"
+            loading="lazy"
+          />
+          <p class="site-eyebrow mb-3">Comfort, Convenience &amp; Prime Location</p>
+          <h2 class="text-3xl sm:text-4xl font-serif font-medium text-[#132238] leading-tight mb-5">
+            Your gateway to unforgettable holidays in Nueva Andalucía.
+          </h2>
+          <div class="space-y-4 text-[#52616B] text-[15px] sm:text-base leading-relaxed">
+            <p>
+              Looking for comfort, convenience, and the perfect location for your holiday in Marbella? <strong>Iberiansun</strong> offers an exclusive selection of properties managed by <strong>Serinamar</strong>, a trusted name in property management with over 25 years of experience.
+            </p>
+            <p>
+              Our accommodations in Nueva Andalucía are thoughtfully prepared for families, couples, and groups seeking Mediterranean sunshine, renowned golf courses, sandy beaches, and effortless access to Puerto Banús.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-6 mt-7">
+            <a href="/destinations/" class="site-button">
+              Discover Our Complexes <span aria-hidden="true">→</span>
+            </a>
+            <a href="/about/" class="site-link">
+              About Iberiansun &amp; Serinamar <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 reveal-on-scroll stagger-2">
+          <div class="bg-white border border-[#E4DCCF] rounded-2xl p-8 shadow-sm">
+            <p class="site-eyebrow mb-3">You Are in Good Hands</p>
+            <h3 class="text-2xl font-serif text-[#132238] mb-4">
+              Local Marbella care from check-in to check-out.
+            </h3>
+            <p class="text-sm text-[#596575] leading-relaxed mb-6">
+              Unlike faceless booking platforms, every Iberiansun home is cared for on the ground by our dedicated local team in Los Naranjos de Marbella.
+            </p>
+            <ul class="space-y-3 text-sm text-[#132238] border-t border-[#EAE3D9] pt-5 mb-6">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#C5A880] font-bold">✓</span>
+                <span>Personally inspected apartments, townhouses &amp; villas</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#C5A880] font-bold">✓</span>
+                <span>Direct best-rate booking with zero hidden platform fees</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#C5A880] font-bold">✓</span>
+                <span>English-speaking local office &amp; WhatsApp guest support</span>
+              </li>
+            </ul>
+            <a
+              href="https://serinamar.guestybookings.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="site-link"
+            >
+              Check Live Availability <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHY CHOOSE US (4 PILLARS FROM IBERIANSUN.ES) -->
+  <section id="why-choose-us" class="site-section bg-[#F4EFE6] border-y border-[#E4DCCF]">
+    <div class="site-shell">
+      <div class="max-w-3xl mx-auto text-center mb-14 reveal-title">
+        <p class="site-eyebrow mb-3">Why Choose Us</p>
+        <h2 class="text-3xl sm:text-4xl font-serif font-medium text-[#132238] leading-tight mb-4">
+          Crafted for a seamless Marbella stay.
+        </h2>
+        <p class="text-[#52616B] text-base leading-relaxed">
+          Every detail of your stay is backed by our local experience, handpicked locations, and genuine personal care.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        {reasons.map((item, idx) => (
+          <article class={`holding-card reveal-on-scroll stagger-${idx + 1} bg-white border border-[#E4DCCF] rounded-2xl p-8 flex flex-col justify-between`}>
+            <div>
+              <span class="block font-serif text-sm font-semibold text-[#8C6A3E] tracking-widest mb-4">
+                {item.number}
+              </span>
+              <h3 class="text-2xl font-serif text-[#132238] mb-3">{item.title}</h3>
+              <p class="text-sm sm:text-[15px] text-[#596575] leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. DISCOVER THE ALLURE OF NUEVA ANDALUCÍA (3 SIGNATURE COMPLEXES) -->
+  <section id="destinations" class="site-section bg-[#FDFBF7]">
+    <div class="site-shell">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 reveal-title">
+        <div class="max-w-2xl">
+          <p class="site-eyebrow mb-3">You Are in Good Hands</p>
+          <h2 class="text-3xl sm:text-4xl font-serif font-medium text-[#132238] leading-tight">
+            Discover the Allure of Los Naranjos, Aloha Gardens &amp; Dama de Noche.
+          </h2>
+        </div>
+        <a href="/destinations/" class="site-link shrink-0">
+          View All Destinations <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {destinations.map((dest, idx) => (
+          <article class={`holding-card reveal-on-scroll stagger-${idx + 1} bg-white border border-[#E4DCCF] rounded-2xl overflow-hidden flex flex-col`}>
+            <div class="zoom-img-container relative h-64 bg-[#132238]">
+              <img
+                src={dest.image}
+                alt={dest.imageAlt}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#132238]/85 text-[#E8D5B7] text-[10px] font-semibold uppercase tracking-widest backdrop-blur-xs">
+                {dest.tag}
+              </span>
+            </div>
+            <div class="p-7 flex flex-col flex-grow">
+              <h3 class="text-2xl font-serif text-[#132238] mb-3">{dest.name}</h3>
+              <p class="text-sm text-[#596575] leading-relaxed mb-5 flex-grow">
+                {dest.description}
+              </p>
+              <ul class="space-y-2 border-t border-[#EAE3D9] pt-4 mb-6 text-xs text-[#3E4852]">
+                {dest.highlights.map((hl) => (
+                  <li class="flex items-center gap-2">
+                    <span class="text-[#C5A880] font-bold">✓</span>
+                    <span>{hl}</span>
+                  </li>
+                ))}
+              </ul>
+              <div class="flex items-center justify-between pt-2">
+                <a
+                  href="https://serinamar.guestybookings.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="site-link"
+                >
+                  Check Availability <span aria-hidden="true">↗</span>
+                </a>
+                <a href="/destinations/" class="text-xs font-semibold text-[#8C6A3E] hover:text-[#132238]">
+                  Details →
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. INTERNATIONAL & NON-RESIDENT OWNER SERVICES (BRIDGING GRUPO SERINAMAR MINI-PAGE) -->
+  <section class="site-section bg-[#132238] text-white">
+    <div class="site-shell">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div class="lg:col-span-7 reveal-on-scroll">
+          <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-[#C5A880] mb-3">
+            Non-Resident, UK Based &amp; Overseas Owners
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-serif font-medium text-white leading-tight mb-5">
+            Own a property in Marbella? We also support international owners.
+          </h2>
+          <p class="text-[#D9DEE5] text-sm sm:text-base leading-relaxed mb-6">
+            As part of Grupo Serinamar, Iberiansun bridges Marbella and the United Kingdom — assisting overseas homeowners with Spanish Non-Resident Tax (Modelo 210 IRNR), NIE &amp; banking coordination, municipal rates, utility oversight, and holiday rental management.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/owner-services/" class="site-button site-button--light">
+              Explore Owner Services <span aria-hidden="true">→</span>
+            </a>
+            <a
+              href="/contact/"
+              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-md border border-[#C5A880]/45 text-white hover:bg-white/10 text-xs font-semibold uppercase tracking-wider transition-all"
+            >
+              Speak to Our Desk
+            </a>
+          </div>
+        </div>
+        <div class="lg:col-span-5 reveal-on-scroll stagger-2">
+          <div class="bg-white/6 border border-white/12 rounded-2xl p-7 backdrop-blur-xs space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="text-[#C5A880] font-serif font-bold text-lg">01</span>
+              <div>
+                <h3 class="text-base font-serif text-white mb-1">Non-Resident Taxation (Modelo 210)</h3>
+                <p class="text-xs text-[#C1C6CB] leading-relaxed">Electronic preparation, filing, and AEAT fiscal liaison in clear English.</p>
+              </div>
+            </div>
+            <div class="border-t border-white/10 pt-4 flex items-start gap-3">
+              <span class="text-[#C5A880] font-serif font-bold text-lg">02</span>
+              <div>
+                <h3 class="text-base font-serif text-white mb-1">UK Liaison &amp; Bilingual Care</h3>
+                <p class="text-xs text-[#C1C6CB] leading-relaxed">Dedicated coordination between Marbella and the UK for total peace of mind.</p>
+              </div>
+            </div>
+            <div class="border-t border-white/10 pt-4 flex items-start gap-3">
+              <span class="text-[#C5A880] font-serif font-bold text-lg">03</span>
+              <div>
+                <h3 class="text-base font-serif text-white mb-1">NIE, Utilities &amp; Community Fees</h3>
+                <p class="text-xs text-[#C1C6CB] leading-relaxed">IBI council tax, direct debits, utility audits, and community administration.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. GUEST TESTIMONIALS ("THIS IS WHAT THEY SAY") -->
+  <section class="site-section bg-[#F4EFE6] border-b border-[#E4DCCF]">
+    <div class="site-shell">
+      <div class="text-center max-w-2xl mx-auto mb-12 reveal-title">
+        <p class="site-eyebrow mb-3">Guest Experiences</p>
+        <h2 class="text-3xl sm:text-4xl font-serif font-medium text-[#132238]">
+          This Is What They Say
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {testimonials.map((t, idx) => (
+          <blockquote class={`holding-card reveal-on-scroll stagger-${idx + 1} bg-white border border-[#E4DCCF] rounded-2xl p-8 flex flex-col justify-between`}>
+            <div>
+              <div class="text-[#C5A880] text-sm tracking-widest mb-4" aria-label="5 out of 5 stars">
+                ★★★★★
+              </div>
+              <p class="font-serif text-lg sm:text-xl text-[#132238] leading-relaxed italic mb-6">
+                “{t.quote}”
+              </p>
+            </div>
+            <footer class="border-t border-[#EAE3D9] pt-4">
+              <p class="text-sm font-semibold text-[#132238]">{t.author}</p>
+              <p class="text-xs text-[#686F77]">{t.stay}</p>
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. GROUP COMPANIES ("A UNIFIED APPROACH TO REAL ESTATE IN MARBELLA") -->
+  <section class="site-section bg-[#FDFBF7]">
+    <div class="site-shell">
+      <div class="text-center max-w-3xl mx-auto mb-14 reveal-title">
+        <p class="site-eyebrow mb-3">Group Companies</p>
+        <h2 class="text-3xl sm:text-4xl font-serif font-medium text-[#132238] leading-tight mb-4">
+          A Unified Approach to Real Estate in Marbella – Costa del Sol
+        </h2>
+        <p class="text-[#52616B] text-base leading-relaxed">
+          Iberiansun is proud to be part of the Serinamar Group — bringing together specialised companies with one shared commitment to excellence.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+        {groupCompanies.map((company, idx) => (
+          <article class={`holding-card reveal-on-scroll stagger-${idx + 1} bg-white border border-[#E4DCCF] rounded-2xl p-7 flex flex-col`}>
+            <div class="h-28 flex items-center justify-center p-3 mb-6 bg-[#FAF8F5] rounded-xl border border-[#EAE3D9]/70">
+              <img
+                src={company.logo}
+                alt={company.name}
+                class="max-h-24 max-w-[220px] w-auto object-contain"
+                loading="lazy"
+              />
+            </div>
+            <span class="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full bg-[#132238]/5 text-[#132238] text-[11px] font-semibold uppercase tracking-wider mb-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#C5A880]"></span>
+              {company.badge}
+            </span>
+            <h3 class="text-xl font-serif font-semibold text-[#132238] mb-3">{company.name}</h3>
+            <p class="text-xs sm:text-sm text-[#596575] leading-relaxed mb-6 flex-grow">
+              {company.description}
+            </p>
+            <a
+              href={company.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-shine w-full inline-flex items-center justify-between px-4 py-3 rounded-lg bg-[#132238] hover:bg-[#203654] text-white text-xs font-semibold uppercase tracking-wider"
+            >
+              <span>{company.cta}</span>
+              <span class="text-[#C5A880]">↗</span>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. READY TO PLAN YOUR STAY CTA -->
+  <section class="site-section bg-[#F4EFE6] border-t border-[#E4DCCF]">
+    <div class="site-shell">
+      <div class="reveal-scale bg-[#132238] text-white rounded-2xl p-10 sm:p-14 text-center relative overflow-hidden">
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C5A880] mb-3">
+          Stay Connected
+        </p>
+        <h2 class="text-3xl sm:text-4xl font-serif font-medium text-white mb-4">
+          Ready to Plan Your Stay?
+        </h2>
+        <p class="text-[#D9DEE5] text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-8">
+          Contact us today to reserve your ideal holiday home in Nueva Andalucía and create unforgettable memories in Marbella.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="https://serinamar.guestybookings.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="site-button site-button--light"
+          >
+            Book Your Stay <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            href="/contact/"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md border border-[#C5A880]/50 text-white hover:bg-white/10 text-xs sm:text-sm font-semibold transition-all"
+          >
+            Send an Enquiry →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

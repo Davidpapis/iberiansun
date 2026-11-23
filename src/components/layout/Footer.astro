@@ -1,0 +1,187 @@
+---
+const brands = [
+  {
+    name: 'Grupo Serinamar',
+    href: 'https://gruposerinamar.com/en/',
+    detail: 'Holiday stays, real estate & local expertise since 2000',
+  },
+  {
+    name: 'Naranjos de Marbella',
+    href: 'https://naranjosdemarbella.com/',
+    detail: 'Holiday apartments in Los Naranjos de Marbella',
+  },
+  {
+    name: 'Just Banús',
+    href: 'https://justbanus.com/',
+    detail: 'Property management, cleaning, maintenance & refurbishment',
+  },
+  {
+    name: 'Iberiansun',
+    href: '/',
+    detail: 'Exclusive Nueva Andalucía stays & international owner care',
+  },
+];
+
+const whatsappMessage = 'Hello Iberiansun, I would like information about your holiday properties in Nueva Andalucía, Marbella.';
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-company">
+        <a class="footer-brand" href="/" aria-label="Iberiansun home">
+          <img src="/images/logos/casita-logo-white.png" width="52" height="26" alt="" loading="lazy" />
+          <span>
+            <strong>Iberiansun</strong>
+            <small>A Serinamar Group Company · Marbella</small>
+          </span>
+        </a>
+        <p class="footer-intro">
+          Your gateway to unforgettable holidays in Nueva Andalucía, Marbella. Exclusive properties backed by Serinamar’s 25+ years of trusted local management.
+        </p>
+        <address>
+          <p>Urb. Los Naranjos de Marbella, Shopping Centre, Unit 5, 29660 Marbella (Málaga), Spain</p>
+          <div class="phone-links">
+            <a href="tel:+34952813362">+34 952 81 33 62</a>
+            <span aria-hidden="true">·</span>
+            <a href="tel:+34617225589">+34 617 225 589</a>
+          </div>
+          <a class="email-link" href="mailto:gloria@serinamar.com">gloria@serinamar.com</a>
+        </address>
+        <a
+          class="whatsapp-link"
+          href={`https://wa.me/34617225589?text=${encodeURIComponent(whatsappMessage)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Chat on WhatsApp <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <nav class="footer-navigation" aria-label="Explore Iberiansun">
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/destinations/">Nueva Andalucía Destinations</a></li>
+          <li><a href="/owner-services/">International &amp; UK Owner Services</a></li>
+          <li><a href="/about/">About Iberiansun &amp; The Group</a></li>
+          <li><a href="/contact/">Contact &amp; Enquiries</a></li>
+        </ul>
+        <div class="footer-portals">
+          <a href="https://serinamar.guestybookings.com" target="_blank" rel="noopener noreferrer">
+            Check Availability &amp; Book <span aria-hidden="true">↗</span>
+          </a>
+          <a href="https://serinamar.guestyowners.com" target="_blank" rel="noopener noreferrer">
+            Owner Portal <span aria-hidden="true">↗</span>
+          </a>
+          <a href="https://solutionsserinamar.freshdesk.com/support/tickets/new" target="_blank" rel="noopener noreferrer">
+            Guest Support Desk <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </nav>
+
+      <nav class="footer-brands" aria-label="Group Companies">
+        <h2>Serinamar Group Companies</h2>
+        <ul>
+          {brands.map((brand) => (
+            <li>
+              <a
+                href={brand.href}
+                target={brand.href.startsWith('http') ? '_blank' : undefined}
+                rel={brand.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              >
+                <span>{brand.name}</span>
+                <small>{brand.detail}</small>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {new Date().getFullYear()} Iberiansun · A Serinamar Group Company. All Rights Reserved.</p>
+      <p>Solutions Serinamar S.L. · Nueva Andalucía, Marbella · Costa del Sol</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer { background: #132238; color: #e8e7e3; padding: 68px 0 24px; }
+  .footer-inner { max-width: 1328px; padding: 0 40px; margin: 0 auto; }
+  .site-footer a { color: inherit; text-decoration: none; }
+  .site-footer a:hover { color: #dec7a7; }
+  .site-footer a:focus-visible { outline: 2px solid #c5a880; outline-offset: 5px; }
+
+  .footer-grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 72px; padding-bottom: 52px; }
+  .footer-brand { display: inline-flex; align-items: center; gap: 13px; }
+  .footer-brand img { width: 52px; height: auto; opacity: .95; }
+  .footer-brand strong { display: block; font-size: 15px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+  .footer-brand small { display: block; margin-top: 4px; font-size: 10px; color: #c5a880; letter-spacing: .1em; text-transform: uppercase; }
+  .footer-intro { max-width: 360px; margin: 22px 0 20px; font-size: 13px; line-height: 1.85; color: #c1c6cb; }
+  .site-footer address { font-style: normal; font-size: 12px; line-height: 1.8; color: #c1c6cb; }
+  .site-footer address p { max-width: 320px; margin: 0 0 10px; }
+  .phone-links { display: flex; flex-wrap: wrap; column-gap: 9px; row-gap: 2px; }
+  .phone-links a { white-space: nowrap; }
+  .email-link { display: inline-block; margin-top: 6px; }
+  .whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 20px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #8d7a61;
+    font-size: 12px;
+    color: #dec7a7 !important;
+  }
+
+  .site-footer h2 {
+    margin: 3px 0 22px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #c5a880;
+  }
+  .site-footer ul { padding: 0; margin: 0; list-style: none; }
+  .footer-navigation ul { display: grid; gap: 14px; font-size: 13px; }
+  .footer-portals {
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 12px;
+    color: #c1c6cb;
+  }
+  .footer-portals a { display: flex; justify-content: space-between; gap: 12px; }
+  .footer-portals span { color: #c5a880; }
+
+  .footer-brands ul { display: grid; gap: 18px; }
+  .footer-brands a > span { display: block; font-size: 14px; font-weight: 500; }
+  .footer-brands small { display: block; margin-top: 4px; font-size: 11px; line-height: 1.5; color: #aeb6bf; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: #a5aeb9;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+  .footer-bottom p { margin: 0; }
+
+  @media (max-width: 1023px) {
+    .footer-grid { gap: 36px; grid-template-columns: 1.25fr 1fr 1fr; }
+    .footer-inner { padding: 0 28px; }
+  }
+  @media (max-width: 767px) {
+    .site-footer { padding: 48px 0 24px; }
+    .footer-inner { padding: 0 22px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; padding-bottom: 32px; }
+    .footer-bottom { flex-direction: column; gap: 6px; font-size: 10px; }
+  }
+</style>

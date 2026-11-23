@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/ui/Hero.astro';
+
+const complexes = [
+  {
+    id: 'los-naranjos',
+    eyebrow: 'Signature Complex 01 · Nueva Andalucía',
+    name: 'Los Naranjos de Marbella',
+    subtitle: 'Comfortable apartments surrounded by beautiful gardens and pools.',
+    image: '/images/destinations/los-naranjos.jpg',
+    imageAlt: 'Swimming pool and tropical gardens at Los Naranjos de Marbella',
+    description:
+      'Set in a charming Andalusian pueblo-style urbanisation, Los Naranjos de Marbella is one of the most sought-after holiday communities in Nueva Andalucía. Guests enjoy expansive landscaped gardens, multiple swimming pools, on-site restaurants, a supermarket, and paddle club — all just minutes from Puerto Banús.',
+    features: [
+      'Spacious 1, 2 & 3-bedroom apartments and townhouses',
+      'Multiple communal swimming pools & mature subtropical gardens',
+      'On-site cafés, restaurants, supermarket & yoga/wellness spaces',
+      '5 minutes by car (or pleasant walk) to Puerto Banús & beaches',
+    ],
+  },
+  {
+    id: 'aloha-gardens',
+    eyebrow: 'Signature Complex 02 · Marbella Golf Valley',
+    name: 'Aloha Gardens',
+    subtitle: 'Elegant properties with exclusive amenities near renowned golf courses.',
+    image: '/images/destinations/aloha-gardens.jpg',
+    imageAlt: 'Aloha Gardens residential complex in Nueva Andalucía',
+    description:
+      'Located at the gateway to the celebrated Golf Valley, Aloha Gardens offers refined Mediterranean living with lush water features, three swimming pools (including a heated indoor/outdoor option), and immediate access to Aloha Golf, Las Brisas, and Los Naranjos Golf Club.',
+    features: [
+      'Prime Golf Valley location near Aloha, Las Brisas & Los Naranjos',
+      '3 communal swimming pools surrounded by manicured gardens',
+      'Steps from renowned international dining, cafés & boutiques',
+      'Ideal for golf retreats, couples & luxury family holidays',
+    ],
+  },
+  {
+    id: 'dama-de-noche',
+    eyebrow: 'Signature Complex 03 · Steps from Puerto Banús',
+    name: 'Dama de Noche',
+    subtitle: 'Secure, convenient, and stylish accommodations, just minutes from Puerto Banús.',
+    image: '/images/destinations/dama-de-noche.jpg',
+    imageAlt: 'Dama de Noche holiday residence near Puerto Banús, Marbella',
+    description:
+      'Dama de Noche combines resort-style facilities with unbeatable walkability to Puerto Banús marina, designer boutiques, beach clubs, and nightlife. Set within a 24-hour gated community with sweeping communal pools, paddle tennis courts, and landscaped walkways.',
+    features: [
+      '24-hour gated security and private underground parking',
+      'Two large resort-style swimming pools & children’s play areas',
+      'Six paddle tennis courts & on-site Mediterranean restaurant',
+      'Short walk to Puerto Banús marina, beaches & shopping',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Nueva Andalucía Destinations | Los Naranjos, Aloha Gardens & Dama de Noche | Iberiansun"
+  description="Explore Iberiansun's handpicked holiday complexes in Nueva Andalucía, Marbella: Los Naranjos, Aloha Gardens, and Dama de Noche."
+  canonicalURL="https://iberiansun.es/destinations/"
+>
+  <Hero
+    eyebrow="Nueva Andalucía · Marbella"
+    title="Discover the Allure of Our Signature Complexes"
+    description="Handpicked apartments, townhouses, and villas in Los Naranjos, Aloha Gardens, and Dama de Noche — all managed locally by Serinamar Group."
+    image="/images/destinations/los-naranjos-gardens.jpg"
+    imageAlt="Lush gardens and architecture in Nueva Andalucía, Marbella"
+    actionLabel="Check Live Availability"
+    actionHref="https://serinamar.guestybookings.com"
+    secondaryLabel="Enquire With Our Team"
+    secondaryHref="/contact/"
+  />
+
+  <section class="site-section bg-[#FDFBF7]">
+    <div class="site-shell space-y-20">
+      {complexes.map((complex, index) => (
+        <article
+          id={complex.id}
+          class="reveal-on-scroll grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center bg-white border border-[#E4DCCF] rounded-2xl p-6 sm:p-10 shadow-xs"
+        >
+          <div class={`lg:col-span-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+            <div class="zoom-img-container rounded-xl overflow-hidden aspect-[4/3] bg-[#132238]">
+              <img
+                src={complex.image}
+                alt={complex.imageAlt}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div class={`lg:col-span-6 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+            <p class="site-eyebrow mb-3">{complex.eyebrow}</p>
+            <h2 class="text-3xl font-serif font-medium text-[#132238] mb-3">{complex.name}</h2>
+            <p class="text-sm font-medium text-[#8C6A3E] mb-4">{complex.subtitle}</p>
+            <p class="text-sm sm:text-[15px] text-[#52616B] leading-relaxed mb-6">
+              {complex.description}
+            </p>
+            <ul class="space-y-2.5 border-t border-[#EAE3D9] pt-5 mb-7 text-sm text-[#132238]">
+              {complex.features.map((feat) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="text-[#C5A880] font-bold">✓</span>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+            <div class="flex flex-wrap items-center gap-5">
+              <a
+                href="https://serinamar.guestybookings.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="site-button"
+              >
+                Book in {complex.name} <span aria-hidden="true">↗</span>
+              </a>
+              <a href="/contact/" class="site-link">
+                Request Tailored Options →
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

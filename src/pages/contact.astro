@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/ui/Hero.astro';
+---
+
+<BaseLayout
+  title="Contact Iberiansun | Holiday Stays & Property Enquiries in Marbella"
+  description="Contact Iberiansun in Nueva Andalucía, Marbella to book your holiday stay in Los Naranjos, Aloha Gardens, or Dama de Noche, or enquire about owner services."
+  canonicalURL="https://iberiansun.es/contact/"
+>
+  <Hero
+    eyebrow="Stay Connected · Marbella Office"
+    title="Ready to Plan Your Stay in Marbella?"
+    description="Get in touch with our local team in Nueva Andalucía. Whether you are planning a family holiday or looking for owner support, we are here to help."
+    image="/images/destinations/puerto-banus.jpg"
+    imageAlt="Puerto Banús marina near Nueva Andalucía, Marbella"
+    actionLabel="Check Availability Online"
+    actionHref="https://serinamar.guestybookings.com"
+  />
+
+  <section class="site-section bg-[#FDFBF7]">
+    <div class="site-shell">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <!-- Direct Office Details -->
+        <div class="lg:col-span-5 space-y-6 reveal-on-scroll">
+          <div>
+            <p class="site-eyebrow mb-2">Direct Contact</p>
+            <h2 class="text-3xl font-serif font-medium text-[#132238] mb-3">
+              Speak with our local team.
+            </h2>
+            <p class="text-sm sm:text-base text-[#52616B] leading-relaxed">
+              Our office is located right in the heart of Los Naranjos de Marbella, minutes from Aloha Gardens, Dama de Noche, and Puerto Banús.
+            </p>
+          </div>
+
+          <div class="bg-white border border-[#E4DCCF] rounded-2xl p-7 space-y-5 shadow-xs">
+            <div>
+              <p class="text-[11px] font-bold uppercase tracking-widest text-[#8C6A3E] mb-1">Office Address</p>
+              <p class="text-sm text-[#132238]">
+                Urb. Los Naranjos de Marbella, Shopping Centre, Unit 5<br />
+                29660 Nueva Andalucía, Marbella (Málaga), Spain
+              </p>
+            </div>
+            <div class="border-t border-[#EAE3D9] pt-4">
+              <p class="text-[11px] font-bold uppercase tracking-widest text-[#8C6A3E] mb-1">Telephone &amp; WhatsApp</p>
+              <p class="text-sm text-[#132238] space-x-3">
+                <a href="tel:+34952813362" class="hover:text-[#8C6A3E] font-medium">+34 952 81 33 62</a>
+                <span class="text-[#C5A880]">·</span>
+                <a href="tel:+34617225589" class="hover:text-[#8C6A3E] font-medium">+34 617 225 589</a>
+              </p>
+            </div>
+            <div class="border-t border-[#EAE3D9] pt-4">
+              <p class="text-[11px] font-bold uppercase tracking-widest text-[#8C6A3E] mb-1">Email</p>
+              <p class="text-sm text-[#132238]">
+                <a href="mailto:gloria@serinamar.com" class="hover:text-[#8C6A3E] font-medium block">gloria@serinamar.com</a>
+                <a href="mailto:sara@iberiansun.co.uk" class="hover:text-[#8C6A3E] text-xs text-[#596575] mt-1 block">UK / Non-Resident Desk: sara@iberiansun.co.uk</a>
+              </p>
+            </div>
+            <div class="border-t border-[#EAE3D9] pt-4">
+              <p class="text-[11px] font-bold uppercase tracking-widest text-[#8C6A3E] mb-1">Office Hours</p>
+              <p class="text-sm text-[#132238]">Monday – Friday: 08:00 – 16:00 (CET)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enquiry Form -->
+        <form id="contact-form" class="lg:col-span-7 bg-white border border-[#E4DCCF] rounded-2xl p-8 sm:p-10 shadow-xs grid grid-cols-1 sm:grid-cols-2 gap-5 reveal-on-scroll stagger-2">
+          <div class="sm:col-span-2 mb-1">
+            <h3 class="text-2xl font-serif text-[#132238]">Send Us a Message</h3>
+            <p class="text-xs text-[#596575] mt-1">We typically reply within one business day.</p>
+          </div>
+
+          <div>
+            <label for="c-name" class="block text-xs font-semibold uppercase tracking-wider text-[#132238] mb-2">Full Name</label>
+            <input id="c-name" name="name" required class="w-full px-3.5 py-2.5 border border-[#D4CBBD] rounded-md text-sm bg-[#FDFBF7] focus:bg-white" />
+          </div>
+          <div>
+            <label for="c-email" class="block text-xs font-semibold uppercase tracking-wider text-[#132238] mb-2">Email Address</label>
+            <input id="c-email" name="email" type="email" required class="w-full px-3.5 py-2.5 border border-[#D4CBBD] rounded-md text-sm bg-[#FDFBF7] focus:bg-white" />
+          </div>
+          <div>
+            <label for="c-phone" class="block text-xs font-semibold uppercase tracking-wider text-[#132238] mb-2">Phone / WhatsApp</label>
+            <input id="c-phone" name="phone" type="tel" class="w-full px-3.5 py-2.5 border border-[#D4CBBD] rounded-md text-sm bg-[#FDFBF7] focus:bg-white" />
+          </div>
+          <div>
+            <label for="c-topic" class="block text-xs font-semibold uppercase tracking-wider text-[#132238] mb-2">Preferred Complex / Topic</label>
+            <select id="c-topic" name="topic" class="w-full px-3.5 py-2.5 border border-[#D4CBBD] rounded-md text-sm bg-[#FDFBF7] focus:bg-white">
+              <option>Holiday Stay — Los Naranjos</option>
+              <option>Holiday Stay — Aloha Gardens</option>
+              <option>Holiday Stay — Dama de Noche</option>
+              <option>Non-Resident / UK Owner Services</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="c-message" class="block text-xs font-semibold uppercase tracking-wider text-[#132238] mb-2">Message &amp; Preferred Dates</label>
+            <textarea id="c-message" name="message" rows="5" required placeholder="Tell us your preferred dates, number of guests, or how our team can help." class="w-full px-3.5 py-2.5 border border-[#D4CBBD] rounded-md text-sm bg-[#FDFBF7] focus:bg-white"></textarea>
+          </div>
+          <div class="sm:col-span-2">
+            <button id="c-submit" type="submit" class="site-button cursor-pointer">
+              Send Enquiry →
+            </button>
+            <div id="c-status" class="mt-4 text-sm font-medium hidden"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const contactForm = document.querySelector<HTMLFormElement>('#contact-form');
+    const contactBtn = document.querySelector<HTMLButtonElement>('#c-submit');
+    const contactStatus = document.querySelector<HTMLDivElement>('#c-status');
+
+    contactForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!contactForm || !contactBtn || !contactStatus) return;
+      const data = new FormData(contactForm);
+      const original = contactBtn.textContent;
+      contactBtn.disabled = true;
+      contactBtn.textContent = 'Sending...';
+      contactStatus.classList.add('hidden');
+
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/gloria@serinamar.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            Name: data.get('name'),
+            Email: data.get('email'),
+            Phone: data.get('phone') || 'Not provided',
+            Topic: data.get('topic'),
+            Message: data.get('message'),
+            _subject: `New Iberiansun Website Enquiry: ${data.get('topic')} - ${data.get('name')}`,
+            _template: 'table',
+          }),
+        });
+        if (!res.ok) throw new Error('Request failed');
+        contactStatus.className = 'mt-4 p-3.5 rounded-lg bg-[#f0f9f1] border border-[#bbf7d0] text-[#166534] text-sm';
+        contactStatus.textContent = 'Thank you! Your message has been sent to our Marbella team. We will reply shortly.';
+        contactForm.reset();
+      } catch {
+        contactStatus.className = 'mt-4 p-3.5 rounded-lg bg-[#fef2f2] border border-[#fecaca] text-[#991b1b] text-sm';
+        contactStatus.innerHTML = 'Unable to send right now. Please email <a href="mailto:gloria@serinamar.com" class="underline font-semibold">gloria@serinamar.com</a> or message us on WhatsApp.';
+      } finally {
+        contactBtn.disabled = false;
+        contactBtn.textContent = original;
+      }
+    });
+  </script>
+</BaseLayout>

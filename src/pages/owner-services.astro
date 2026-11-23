@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/ui/Hero.astro';
+
+const services = [
+  {
+    number: '01',
+    title: 'Non-Resident Spanish Taxation',
+    description:
+      'We manage and file your Spanish property tax returns with clear, transparent communication in English.',
+    items: [
+      'Preparation & electronic submission of Modelo 210 IRNR',
+      'Deemed rental income calculations & periodic declarations',
+      'Spanish Tax Agency (AEAT) liaison & fiscal representation',
+    ],
+  },
+  {
+    number: '02',
+    title: 'English-Speaking Client Care & UK Coordination',
+    description:
+      'A dedicated liaison between Marbella and the United Kingdom for complete peace of mind all year round.',
+    items: [
+      'Direct contact via phone, WhatsApp, and email',
+      'UK representative coordination (Sara Keppler)',
+      'Clear document explanations and English translations',
+    ],
+  },
+  {
+    number: '03',
+    title: 'NIE Numbers & Spanish Banking',
+    description:
+      'Guiding you smoothly through essential legal and administrative milestones when buying or owning in Spain.',
+    items: [
+      'NIE application appointments & legal documentation support',
+      'Non-resident bank account opening & direct debit setups',
+      'Power of attorney coordination with bilingual local notaries',
+    ],
+  },
+  {
+    number: '04',
+    title: 'Municipal Rates, Utilities & Community',
+    description:
+      'Total administrative protection against utility disconnects, missed notices, or municipal surcharges.',
+    items: [
+      'Annual IBI (Council Tax) & Basura (waste collection) direct debits',
+      'Utility bill auditing (Endesa electricity, Acosol water, fibre)',
+      'Homeowners Community (Comunidad de Propietarios) liaison',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="International & Non-Resident Owner Services Marbella | Iberiansun"
+  description="Non-resident tax advisory (Modelo 210), UK coordination, NIE support, utility management, and holiday rental care in Marbella with Iberiansun."
+  canonicalURL="https://iberiansun.es/owner-services/"
+>
+  <Hero
+    eyebrow="Iberiansun · International & Non-Resident Owners"
+    title="Non-Resident Tax Advisory & Property Support in Marbella"
+    description="Dedicated English-speaking assistance handling administrative, legal, fiscal, and rental requirements for your Marbella property — backed by Grupo Serinamar."
+    image="/images/hero/marbella-villa.jpg"
+    imageAlt="Luxury Mediterranean residence in Marbella"
+    actionLabel="Request a Consultation"
+    actionHref="#owner-enquiry"
+    secondaryLabel="View Services"
+    secondaryHref="#services-grid"
+  />
+
+  <section class="site-section bg-[#FDFBF7]">
+    <div class="site-shell">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 reveal-on-scroll">
+          <img
+            src="/images/logos/iberiansun-logo-nobg.png"
+            alt="Iberiansun"
+            class="h-18 w-auto object-contain mb-6"
+            loading="lazy"
+          />
+          <p class="site-eyebrow mb-3">Non-Resident, UK Based &amp; Overseas Clients</p>
+          <h2 class="text-3xl sm:text-4xl font-serif font-medium text-[#132238] leading-tight mb-5">
+            Your Spanish property, with reliable on-the-ground support.
+          </h2>
+          <div class="space-y-4 text-[#52616B] text-base leading-relaxed">
+            <p>
+              Living abroad shouldn’t make owning in Marbella stressful. Iberiansun coordinates the administration of your home, liaising directly with local authorities, utility providers, and community administrators.
+            </p>
+            <p>
+              Part of <strong>Grupo Serinamar</strong>, our team works seamlessly alongside <strong>Serinamar</strong> (holiday rentals &amp; sales) and <strong>Just Banús</strong> (maintenance, cleaning &amp; refurbishment), delivering complete 360° care in your own language.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-6 mt-7">
+            <a
+              class="site-link"
+              href="https://wa.me/34617225589?text=Hello%20Iberiansun%2C%20I%20am%20a%20non-resident%20owner%20and%20would%20like%20information"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chat on WhatsApp ↗
+            </a>
+            <a class="site-link" href="mailto:sara@iberiansun.co.uk">
+              sara@iberiansun.co.uk
+            </a>
+          </div>
+        </div>
+
+        <aside class="lg:col-span-5 reveal-on-scroll stagger-2 bg-white border border-[#E4DCCF] rounded-2xl p-8 shadow-xs">
+          <p class="site-eyebrow mb-3">Non-Resident Advisory</p>
+          <h3 class="text-2xl font-serif text-[#132238] mb-3">Guidance tailored to your home.</h3>
+          <p class="text-sm text-[#596575] leading-relaxed mb-5">
+            Whether your property is exclusively for personal holiday use or rented out to guests, tax and administrative obligations differ. Let our team assess your exact requirements.
+          </p>
+          <ul class="space-y-2.5 text-sm text-[#132238] border-t border-[#EAE3D9] pt-5 mb-6">
+            <li class="flex items-start gap-2.5"><span class="text-[#C5A880] font-bold">✓</span> Non-resident income tax filing (Modelo 210 IRNR)</li>
+            <li class="flex items-start gap-2.5"><span class="text-[#C5A880] font-bold">✓</span> Annual council rates, utility audits &amp; direct debits</li>
+            <li class="flex items-start gap-2.5"><span class="text-[#C5A880] font-bold">✓</span> Bilingual documentation with UK client liaison</li>
+          </ul>
+          <a class="site-button w-full" href="#owner-enquiry">
+            Request a Consultation →
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="services-grid" class="site-section bg-[#F4EFE6] border-y border-[#E4DCCF]">
+    <div class="site-shell">
+      <div class="max-w-2xl mb-12 reveal-title">
+        <p class="site-eyebrow mb-3">How We Help You</p>
+        <h2 class="text-3xl sm:text-4xl font-serif font-medium text-[#132238]">
+          Clear, hassle-free property administration.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+        {services.map((service, idx) => (
+          <article class={`holding-card reveal-on-scroll stagger-${idx + 1} bg-white border border-[#E4DCCF] rounded-2xl p-8 flex flex-col justify-between`}>
+            <div>
+              <span class="block font-serif text-sm font-semibold text-[#8C6A3E] tracking-widest mb-4">
+                {service.number}
+              </span>
+              <h3 class="text-2xl font-serif text-[#132238] mb-3">{service.title}</h3>
+              <p class="text-sm text-[#596575] leading-relaxed mb-5">{service.description}</p>
+              <ul class="space-y-2.5 border-t border-[#EAE3D9] pt-4 mb-6 text-sm text-[#3E4852]">
+                {service.items.map((item) => (
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-[#C5A880] font-bold">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <a href="#owner-enquiry" class="site-link self-start">
+              Enquire about this service →
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="owner-enquiry" class="site-section bg-[#FDFBF7]">
+    <div class="site-shell">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5 reveal-on-scroll">
+          <p class="site-eyebrow mb-3">Get In Touch</p>
+          <h2 class="text-3xl sm:text-4xl font-serif font-medium text-[#132238] mb-4">
+            Tell us what your property needs.
+          </h2>
+          <p class="text-sm sm:text-base text-[#52616B] leading-relaxed mb-6">
+            Select your area of interest and our Iberiansun international desk will respond promptly with clear next steps.
+          </p>
+          <div class="space-y-2 text-sm text-[#132238]">
+            <p><strong>UK &amp; International Desk:</strong> <a href="mailto:sara@iberiansun.co.uk" class="underline text-[#8C6A3E]">sara@iberiansun.co.uk</a></p>
+            <p><strong>Marbella Office:</strong> <a href="mailto:gloria@serinamar.com" class="underline text-[#8C6A3E]">gloria@serinamar.com</a></p>
+            <p><strong>Telephone:</strong> <a href="tel:+34952813362" class="hover:text-[#8C6A3E]">+34 952 81 33 62</a></p>
+          </div>
+        </div>
+
+        <form id="owner-service-form" class="lg:col-span-7 bg-white border border-[#E4DCCF] rounded-2xl p-8 shadow-xs grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="owner-name" class="block text-xs font-semibold uppercase tracking-wider text-[#132238] mb-2">Full Name</label>
+            <input id="owner-name" name="name" required class="w-full px-3.5 py-2.5 border border-[#D4CBBD] rounded-md text-sm bg-[#FDFBF7] focus:bg-white" />
+          </div>
+          <div>
+            <label for="owner-email" class="block text-xs font-semibold uppercase tracking-wider text-[#132238] mb-2">Email Address</label>
+            <input id="owner-email" name="email" type="email" required class="w-full px-3.5 py-2.5 border border-[#D4CBBD] rounded-md text-sm bg-[#FDFBF7] focus:bg-white" />
+          </div>
+          <div>
+            <label for="owner-phone" class="block text-xs font-semibold uppercase tracking-wider text-[#132238] mb-2">Phone (with country code)</label>
+            <input id="owner-phone" name="phone" type="tel" class="w-full px-3.5 py-2.5 border border-[#D4CBBD] rounded-md text-sm bg-[#FDFBF7] focus:bg-white" />
+          </div>
+          <div>
+            <label for="owner-service" class="block text-xs font-semibold uppercase tracking-wider text-[#132238] mb-2">Service of Interest</label>
+            <select id="owner-service" name="service" class="w-full px-3.5 py-2.5 border border-[#D4CBBD] rounded-md text-sm bg-[#FDFBF7] focus:bg-white">
+              <option>Taxation &amp; Modelo 210 IRNR</option>
+              <option>Holiday Rental Management</option>
+              <option>NIE &amp; Spanish Banking</option>
+              <option>Utilities &amp; Community Fees</option>
+              <option>Other Property Enquiry</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="owner-message" class="block text-xs font-semibold uppercase tracking-wider text-[#132238] mb-2">Your Enquiry</label>
+            <textarea id="owner-message" name="message" rows="4" required placeholder="Property location (e.g. Los Naranjos, Aloha Gardens, Dama de Noche) and how we can assist you." class="w-full px-3.5 py-2.5 border border-[#D4CBBD] rounded-md text-sm bg-[#FDFBF7] focus:bg-white"></textarea>
+          </div>
+          <div class="sm:col-span-2">
+            <button id="owner-submit-btn" type="submit" class="site-button cursor-pointer">
+              Submit Enquiry to Iberiansun →
+            </button>
+            <div id="owner-status-msg" class="mt-4 text-sm font-medium hidden"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.querySelector<HTMLFormElement>('#owner-service-form');
+    const btn = document.querySelector<HTMLButtonElement>('#owner-submit-btn');
+    const status = document.querySelector<HTMLDivElement>('#owner-status-msg');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form || !btn || !status) return;
+      const data = new FormData(form);
+      const original = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Sending enquiry...';
+      status.classList.add('hidden');
+
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/gloria@serinamar.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            Name: data.get('name'),
+            Email: data.get('email'),
+            Phone: data.get('phone') || 'Not provided',
+            Service: data.get('service'),
+            Message: data.get('message'),
+            _subject: `Iberiansun Owner Enquiry: ${data.get('service')} - ${data.get('name')}`,
+            _template: 'table',
+          }),
+        });
+        if (!res.ok) throw new Error('Request failed');
+        status.className = 'mt-4 p-3.5 rounded-lg bg-[#f0f9f1] border border-[#bbf7d0] text-[#166534] text-sm';
+        status.textContent = 'Thank you! Your enquiry has been sent to the Iberiansun team. We will get back to you shortly.';
+        form.reset();
+      } catch {
+        status.className = 'mt-4 p-3.5 rounded-lg bg-[#fef2f2] border border-[#fecaca] text-[#991b1b] text-sm';
+        status.innerHTML = 'Unable to send right now. Please email us directly at <a href="mailto:gloria@serinamar.com" class="underline font-semibold">gloria@serinamar.com</a>.';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = original;
+      }
+    });
+  </script>
+</BaseLayout>

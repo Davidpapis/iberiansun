@@ -1,0 +1,119 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  actionLabel?: string;
+  actionHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  image,
+  imageAlt,
+  actionLabel,
+  actionHref,
+  secondaryLabel,
+  secondaryHref,
+} = Astro.props;
+---
+
+<section class="page-hero" aria-labelledby="page-title">
+  <img class="page-hero__photo" src={image} alt={imageAlt} fetchpriority="high" decoding="async" />
+  <div class="page-hero__shade"></div>
+  <div class="site-shell page-hero__content">
+    <p class="site-eyebrow animate-hero-eyebrow">{eyebrow}</p>
+    <h1 id="page-title" class="animate-hero-title">{title}</h1>
+    <p class="page-hero__description animate-hero-copy">{description}</p>
+    {(actionLabel || secondaryLabel) && (
+      <div class="page-hero__actions animate-hero-actions">
+        {actionLabel && (
+          <a class="site-button site-button--light" href={actionHref}>
+            {actionLabel}<span aria-hidden="true">↗</span>
+          </a>
+        )}
+        {secondaryLabel && (
+          <a class="page-hero__secondary" href={secondaryHref}>
+            {secondaryLabel}<span aria-hidden="true">→</span>
+          </a>
+        )}
+      </div>
+    )}
+    <slot />
+  </div>
+</section>
+
+<style>
+  .page-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    margin: 16px 24px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #fff;
+    background: #132238;
+  }
+  .page-hero__photo,
+  .page-hero__shade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .page-hero__photo { object-fit: cover; object-position: center 50%; }
+  .page-hero__shade {
+    background: linear-gradient(90deg, rgba(19, 34, 56, 0.88) 0%, rgba(19, 34, 56, 0.68) 45%, rgba(19, 34, 56, 0.25) 100%);
+  }
+  .page-hero__content { padding-block: 72px; }
+  .page-hero .site-eyebrow { color: #e8d5b7; margin-bottom: 18px; }
+  .page-hero h1 {
+    font-size: clamp(34px, 4.2vw, 56px);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    max-width: 760px;
+    text-wrap: balance;
+    color: #fff;
+  }
+  .page-hero__description {
+    max-width: 560px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #f4f1eb;
+    margin-top: 20px;
+  }
+  .page-hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+  .page-hero__secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding-block: 10px;
+    border-bottom: 1px solid rgba(197, 168, 128, 0.65);
+  }
+  .page-hero__secondary:hover { color: #e8d5b7; }
+  @media (max-width: 767px) {
+    .page-hero { margin: 10px 12px 0; min-height: 390px; }
+    .page-hero__content { padding-block: 48px; }
+    .page-hero h1 { font-size: 34px; }
+    .page-hero__description { font-size: 15px; line-height: 1.7; }
+  }
+</style>

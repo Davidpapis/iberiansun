@@ -1,0 +1,100 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalURL?: string;
+  image?: string;
+}
+
+const {
+  title = "Iberiansun | Your Ideal Holiday Stay in Nueva Andalucía, Marbella",
+  description = "Exclusive holiday properties in Nueva Andalucía, Marbella — Los Naranjos, Aloha Gardens & Dama de Noche — backed by Serinamar Group's 25+ years of expertise.",
+  canonicalURL = "https://iberiansun.es/",
+  image = "/images/hero/puerto-banus-panorama.webp",
+} = Astro.props;
+
+const siteUrl = "https://iberiansun.es";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LodgingBusiness", "LocalBusiness"],
+      "@id": `${siteUrl}/#organization`,
+      "name": "Iberiansun",
+      "alternateName": "Iberiansun · A Serinamar Group Company",
+      "url": siteUrl,
+      "logo": `${siteUrl}/images/logos/iberiansun-logo-nobg.png`,
+      "image": `${siteUrl}${image}`,
+      "description": description,
+      "telephone": "+34952813362",
+      "email": "gloria@serinamar.com",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Grupo Serinamar",
+        "url": "https://gruposerinamar.com/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Urb. Los Naranjos de Marbella, Centro Comercial, Local 5",
+        "addressLocality": "Marbella",
+        "postalCode": "29660",
+        "addressRegion": "Málaga",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.5072,
+        "longitude": -4.9504
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Nueva Andalucía" },
+        { "@type": "AdministrativeArea", "name": "Marbella" },
+        { "@type": "AdministrativeArea", "name": "Puerto Banús" },
+        { "@type": "AdministrativeArea", "name": "Costa del Sol" }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "16:00"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "Iberiansun Marbella",
+      "inLanguage": "en-GB"
+    }
+  ]
+};
+---
+
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description.length > 160 ? description.substring(0, 157) + "..." : description} />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href={canonicalURL} />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, siteUrl).href} />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:site_name" content="Iberiansun · A Serinamar Group Company" />
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, siteUrl).href} />
+
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon" href="/favicon.png" />
+
+<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />

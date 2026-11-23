@@ -1,0 +1,85 @@
+:root {
+  --site-ink: #132238;
+  --site-muted: #52616b;
+  --site-paper: #fdfbf7;
+  --site-sand: #f4efe6;
+  --site-line: #e4dccf;
+  --site-accent: #8c6a3e;
+}
+
+body { line-height: 1.65; }
+html { scroll-padding-top: 112px; }
+img { max-width: 100%; }
+a, button, input, select, textarea, summary { -webkit-tap-highlight-color: transparent; }
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #9c7643;
+  outline-offset: 4px;
+}
+
+.site-shell {
+  width: min(1240px, calc(100% - 96px));
+  margin-inline: auto;
+}
+
+.site-eyebrow {
+  font-size: 11px;
+  letter-spacing: .18em;
+  line-height: 1.6;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #8c6a3e;
+}
+
+.site-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 14px 24px;
+  min-height: 48px;
+  background: #132238;
+  color: #fff;
+  border: 1px solid #132238;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: background .2s, color .2s, transform .2s, box-shadow .2s;
+}
+.site-button:hover { background: #203654; }
+.site-button--light { background: #fffaf1; color: #132238; border-color: #fffaf1; }
+.site-button--light:hover { background: #eadcc5; border-color: #eadcc5; }
+.site-button--outline { background: transparent; color: #132238; border-color: #bdb2a2; }
+.site-button--outline:hover { background: #eee8dc; }
+
+.site-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-block: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #132238;
+  border-bottom: 1px solid #c5a880;
+}
+.site-link:hover { color: #8c6a3e; }
+
+.site-section { padding-block: 80px; }
+
+@media (max-width: 767px) {
+  .site-shell { width: calc(100% - 40px); }
+  .site-section { padding-block: 52px; }
+  html { scroll-padding-top: 96px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
